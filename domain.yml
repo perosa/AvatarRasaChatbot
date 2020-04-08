@@ -1,0 +1,76 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - choose_style
+  - choose_gender
+
+entities:
+  - style
+  - gender
+
+slots:
+  style:
+    type: text
+    initial_value: "n/a"
+  gender:
+    type: text
+    initial_value: "n/a"
+  url:
+    type: text
+    initial_value: "n/a"
+
+actions:
+  - action_find_avatar
+
+
+responses:
+  utter_greet:
+  - text: "Hey, looking for an Avatar for your Chatbot?"
+  - text: "Welcome, are you looking for an Avatar for your Chatbot?"
+
+  utter_which_style:
+  - text: "Which style are you after?"
+    buttons:
+    - title: "Fun"
+      payload: '/choose_style{"style": "fun"}'
+    - title: "Professional"
+      payload: '/choose_style{"style": "professional"}'
+
+  utter_which_gender:
+    - text: "Male? Female? A surprise?"
+      buttons:
+        - title: "Female"
+          payload: '/choose_gender{"gender": "female"}'
+        - title: "Male"
+          payload: '/choose_gender{"gender": "male"}'
+        - title: "Surprise Me"
+          payload: '/choose_gender{"gender": "surprise me"}'
+
+  utter_avatar_found:
+    - text: "Here it is!"
+      image: "{url}"
+    - text: "Found it!"
+      image: "{url}"
+    - text: "Tadaaaaa!"
+      image: "{url}"
+
+  utter_try_again:
+    - text: "Would you like to start again?"
+    - text: "Shall we keep looking?"
+
+  utter_goodbye:
+  - text: "Bye now"
+  - text: "Bye"
+  - text: "Goodbye"
+  - text: "Catch you later"
+
+  utter_not_interested:
+    - text: "Ohh, ok, have a nice day!"
+    - text: "Never mind, have a great day!"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
