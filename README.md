@@ -1,5 +1,5 @@
 # AvatarRasaChatbot
-Rasa Chatbot who finds a good Avatar for your chatbot
+Rasa Chatbot: find a good Avatar for your chatbot
 
 Avaiable on GitHub https://perosa.github.io/avatarBot.html and Telegram https://telegram.me/TheAvatarBot
 
