@@ -7,7 +7,6 @@
   - utter_which_gender
 * choose_gender{"gender": "b"}
   - action_find_avatar
-  - utter_avatar_found
   - utter_try_again
 > check_ask_search_again
 
