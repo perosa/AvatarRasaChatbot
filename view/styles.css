@@ -1,0 +1,15 @@
+.header {
+  background-color: #5553b7 !important;
+}
+.launcher {
+  background-color: #5553b7 !important;
+}
+.conversation-container .client {
+  background-color: #5553b7 !important;
+}
+.full-screen .close-button, .conversation-container .toggle-fullscreen-button {
+  background-color: #5553b7 !important;
+}
+.conversation-container .title {
+  color: #ffffff !important;
+}

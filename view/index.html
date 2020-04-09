@@ -1,0 +1,46 @@
+<!-- <!DOCTYPE html> -->
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<br/>
+<br/>
+<a href="#" onclick="localStorage.clear(); location.reload();">Reload</a>
+<div id="webchat"></div>
+<script src="https://storage.googleapis.com/mrbot-cdn/webchat-v0.7.23.js"></script>
+<script type="text/javascript">
+        function codeAddress() {
+
+            setTimeout(init, 1000);
+        }
+        window.onload = codeAddress;
+        </script>
+
+</body>
+
+<script>
+function init() {
+
+WebChat.default.init({
+selector: "#webchat",
+initPayload: "/session_start",
+inputTextFieldHint: "Say Hi",
+customData: { language: "en" },
+socketUrl: "http://localhost:5005",
+socketPath: "/socket.io/",
+storage: "session",
+profileAvatar: "avatarBot.png",
+title: "Avatar Chatbot",
+subtitle: "Find an Avatar",
+displayUnreadCount: true,
+showFullScreenButton: true,
+showMessageDate: true,
+openLauncherImage: "avatarBot.png",
+embedded: false // true for full screen
+});
+}
+
+</script>
+</html>
