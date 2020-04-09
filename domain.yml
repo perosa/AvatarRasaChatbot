@@ -50,11 +50,8 @@ responses:
 
   utter_avatar_found:
     - text: "Here it is!"
-      image: "{url}"
     - text: "Found it!"
-      image: "{url}"
     - text: "Tadaaaaa!"
-      image: "{url}"
 
   utter_try_again:
     - text: "Would you like to start again?"
