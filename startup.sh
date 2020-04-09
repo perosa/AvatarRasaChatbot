@@ -1,0 +1,1 @@
+rasa run -p $PORT --cors "*" --debug & rasa run actions & python /app/resources.py
