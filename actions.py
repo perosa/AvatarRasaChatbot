@@ -2,11 +2,10 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet
 
-from util.file_util import *
+from rest.util.file_util import get_random_file
 
-BASE_FOLDER = 'resources/avatars/'
+BASE_FOLDER = 'rest/resources/avatars/'
 
 
 #
@@ -50,6 +49,6 @@ class ActionFindAvatar(Action):
         #     }
         # })
 
-        dispatcher.utter_image_url(url)
+        dispatcher.utter_message(image=url)
 
         return []
