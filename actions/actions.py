@@ -3,6 +3,8 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
+import os
+
 
 #
 # class ActionHelloWorld(Action):
@@ -32,8 +34,16 @@ class ActionFindAvatar(Action):
 
         dispatcher.utter_message(template="utter_avatar_found")
 
-        url = 'http://localhost:5000/get/' + style + '/' + gender
+        url = get_avatar_svc + '/' + style + '/' + gender
 
         dispatcher.utter_message(image=url)
 
         return []
+
+
+def get_avatar_svc():
+    """
+    Retrieves host serving the Avatar images
+    :return:
+    """
+    return str(os.environ.get("AVATAR_SVC", 'http://localhost:5000'))
