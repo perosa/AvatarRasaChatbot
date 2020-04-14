@@ -32,7 +32,7 @@ class ActionFindAvatar(Action):
 
         dispatcher.utter_message(template="utter_avatar_found")
 
-        url = 'http://localhost:5000/get/' + '/' + style + '/' + gender
+        url = 'http://localhost:5000/get/' + style + '/' + gender
 
         dispatcher.utter_message(image=url)
 
