@@ -3,10 +3,6 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
-from rest.util.file_util import get_random_file
-
-BASE_FOLDER = 'rest/resources/avatars/'
-
 
 #
 # class ActionHelloWorld(Action):
@@ -34,20 +30,9 @@ class ActionFindAvatar(Action):
         style = tracker.get_slot("style")
         gender = tracker.get_slot("gender")
 
-        path = BASE_FOLDER + '/' + style + '/' + gender
-        file = get_random_file(path)
-
         dispatcher.utter_message(template="utter_avatar_found")
 
-        url = 'http://localhost:5000/get/' + file;
-        #
-        # dispatcher.utter_message(attachment={
-        #     "type": "image",
-        #     "payload": {
-        #         "title": "Avatar",
-        #         "src": f"{url}"
-        #     }
-        # })
+        url = 'http://localhost:5000/get/' + '/' + style + '/' + gender
 
         dispatcher.utter_message(image=url)
 
