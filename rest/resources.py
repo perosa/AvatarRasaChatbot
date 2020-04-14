@@ -1,6 +1,12 @@
 from flask import Flask, send_file
 import os
 
+import sys
+
+print(sys.path)
+
+from rest.util.file_util import get_random_file
+
 try:
     app = Flask(__name__)
 except Exception as e:
@@ -17,18 +23,18 @@ def ping():
     return "ping Ok"
 
 
-@app.route('/get/<path:filename>')
-def get_image(filename):
+@app.route('/get/<style>/<gender>')
+def get_image(style, gender):
     """
     Returns the given image
-    :param filename:
+    :param gender:
+    :param style:
     :return:
     """
 
-    folder = os.path.dirname(os.getcwd())
-    filename = folder + '/' + filename
+    folder = os.getcwd() + '/resources/avatars/' + style + '/' + gender
 
-    print('/get_image ' + filename)
+    filename = get_random_file(folder)
 
     return send_file(filename, mimetype='image/png')
 
