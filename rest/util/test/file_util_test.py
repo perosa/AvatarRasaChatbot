@@ -1,6 +1,6 @@
 import unittest
 
-from util.file_util import *
+from rest.util.file_util import *
 
 
 class UtilsTest(unittest.TestCase):

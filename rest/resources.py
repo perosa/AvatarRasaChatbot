@@ -1,5 +1,5 @@
 from flask import Flask, send_file
-from util.file_util import *
+import os
 
 try:
     app = Flask(__name__)
@@ -24,6 +24,10 @@ def get_image(filename):
     :param filename:
     :return:
     """
+
+    folder = os.path.dirname(os.getcwd())
+    filename = folder + '/' + filename
+
     print('/get_image ' + filename)
 
     return send_file(filename, mimetype='image/png')
