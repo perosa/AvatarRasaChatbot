@@ -1,6 +1,0 @@
-FROM rasa/rasa-sdk:1.8.0
-
-COPY actions/ /app/actions/
-
-EXPOSE 5005
-
