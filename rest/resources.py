@@ -1,10 +1,6 @@
 from flask import Flask, send_file
 import os
 
-import sys
-
-print(sys.path)
-
 from rest.util.file_util import get_random_file
 
 try:
@@ -49,3 +45,5 @@ def get_port():
 
 if __name__ == '__main__':
     app.run(debug=True, port=get_port(), host='0.0.0.0')
+    print("Listening on " + get_port())
+

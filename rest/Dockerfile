@@ -1,11 +1,11 @@
 FROM python:3.7-alpine
 
-COPY ./rest /app
+COPY . /app/rest
 WORKDIR /app
-RUN pip install -r requirements.txt
+RUN pip install -r rest/requirements.txt
 
 ENTRYPOINT ["python"]
-CMD ["resources.py"]
+CMD ["rest/resources.py"]
 
 
 
