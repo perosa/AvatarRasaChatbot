@@ -16,7 +16,6 @@ RUN chmod a+x /app/scripts/startup.sh
 RUN chmod a+x /app/scripts/shell.sh
 
 WORKDIR /app
-RUN pip install -r requirements.txt
 
 ENTRYPOINT []
 ENV shell_mode false

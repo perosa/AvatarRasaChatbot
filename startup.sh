@@ -1,1 +1,2 @@
-rasa run -p $PORT --cors "*" --debug & rasa run actions & python /app/resources.py
+echo PORT $PORT
+rasa run -p $PORT --cors "*" --debug --endpoints heroku-endpoints.yml
