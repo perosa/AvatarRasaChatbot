@@ -34,7 +34,7 @@ class ActionFindAvatar(Action):
 
         dispatcher.utter_message(template="utter_avatar_found")
 
-        url = get_avatar_svc + '/' + style + '/' + gender
+        url = get_avatar_svc() + '/' + style + '/' + gender
 
         dispatcher.utter_message(image=url)
 
