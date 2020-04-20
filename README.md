@@ -1,11 +1,11 @@
 # AvatarRasaChatbot
 Rasa Chatbot: find a good Avatar for your chatbot
 
-Avaiable on GitHub https://perosa.github.io/avatarBot.html and Telegram https://telegram.me/TheAvatarBot
+Avaiable on GitHub https://perosa.github.io/avatarBot.html 
 
 ### Tech Specs
 
-Built on Rasa and supporting 2 channels (Web and Telegram)
+Built on Rasa 
 
 Deployed on Docker @ Heroku
 
