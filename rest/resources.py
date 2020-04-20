@@ -1,12 +1,14 @@
 from flask import Flask, send_file
 import os
-
+import logging
 from util.file_util import get_random_file
 
 try:
     app = Flask(__name__)
+    logging.basicConfig(level=logging.DEBUG)
+    logging.getLogger('werkzeug').setLevel(logging.ERROR)
 except Exception as e:
-    print("Error at startup")
+    logging.exception("Error at startup")
 
 
 @app.route('/ping')
@@ -15,7 +17,7 @@ def ping():
     Ping the endpoint
     :return:
     """
-    print('/ping')
+    logging.info('/ping')
     return "ping Ok"
 
 
@@ -28,7 +30,7 @@ def get_image(style, gender):
     :return:
     """
 
-    folder = os.getcwd() + '/resources/avatars/' + style + '/' + gender
+    folder = '/rest/resources/avatars/' + style + '/' + gender
 
     filename = get_random_file(folder)
 
@@ -44,6 +46,6 @@ def get_port():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=get_port(), host='0.0.0.0')
+    app.run(debug=False, port=get_port(), host='0.0.0.0')
 
 

@@ -1,4 +1,5 @@
 import os, random
+import logging
 
 
 def list_files(path):
@@ -6,7 +7,7 @@ def list_files(path):
 
     images = [i for i in files if is_image(i)]
 
-    print(f'images {images}')
+    logging.debug(f'images {images}')
 
     return images
 
@@ -27,6 +28,6 @@ def get_random_file(path):
     i = random.randint(lower, upper)
 
     file = path + '/' + files[i]
-    print(f"Found {file}")
+    logging.info(f"Found {file}")
 
     return file
