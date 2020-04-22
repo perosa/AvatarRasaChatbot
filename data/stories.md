@@ -18,7 +18,10 @@
 # found avatar, stop looking
 > check_ask_search_again
 * deny
-  - utter_goodbye
+  - utter_feedback
+* give_feedback{"feedback": "c"}
+  - action_process_feedback
+
 
 ## not interested
 * greet
@@ -26,6 +29,7 @@
 * deny
   - utter_not_interested
 
+  
 ## say goodbye
 * goodbye
   - utter_goodbye

@@ -50,6 +50,26 @@ class ActionFindAvatar(Action):
         return []
 
 
+class ActionProcessFeedback(Action):
+
+    def name(self) -> Text:
+        logging.debug("Action action_process_feedback")
+        return "action_process_feedback"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        feedback = tracker.get_slot("feedback")
+        logging.info(f"feedback {feedback}")
+
+        if feedback == 'Good':
+            dispatcher.utter_message(template="utter_goodbye_after_positive_feedback")
+        else:
+            dispatcher.utter_message(template="utter_goodbye_after_negative_feedback")
+
+        return []
+
+
 def get_avatar_svc():
     """
     Retrieves host serving the Avatar images

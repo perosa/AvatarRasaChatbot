@@ -72,6 +72,9 @@
 - do you have something else
 - no this does not work for me
 
+## intent:feedback
+- How did I do?
+
 ## intent:choose
 #- Chosen {style} and {gender}
 

@@ -5,6 +5,7 @@ intents:
   - deny
   - choose_style
   - choose_gender
+  - give_feedback
 
 entities:
   - style
@@ -20,9 +21,13 @@ slots:
   url:
     type: text
     initial_value: "n/a"
+  feedback:
+    type: text
+    initial_value: "n/a"
 
 actions:
   - action_find_avatar
+  - action_process_feedback
 
 
 responses:
@@ -63,10 +68,29 @@ responses:
   - text: "Goodbye"
   - text: "Catch you later"
 
+  utter_goodbye_after_positive_feedback:
+    - text: "That's amazing, thank you!"
+    - text: "So nice of you 🤟, have a good one"
+    - text: "This makes my day 🙌  Bye bye"
+    - text: "You are officially my new best friend! Bye bye"
+
+  utter_goodbye_after_negative_feedback:
+    - text: "Sorry to hear that 😕, I will work on it. Thank you and have a great day"
+    - text: "No legacy is so rich as honesty. Thank you"
+    - text: "I see room for improvement, yes, thanks and have a good day"
+    - text: "Thanks for the feedback 🙏, bye now"
+
   utter_not_interested:
     - text: "Ohh, ok, have a nice day!"
     - text: "Never mind, have a great day!"
 
+  utter_feedback:
+    - text: "How did I do?"
+      buttons:
+        - title: "👍"
+          payload: '/give_feedback{"feedback": "Good"}'
+        - title: "👎"
+          payload: '/give_feedback{"feedback": "Bad"}'
 
 session_config:
   session_expiration_time: 60
