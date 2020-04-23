@@ -1,11 +1,11 @@
 # AvatarRasaChatbot
 Rasa Chatbot: find a good Avatar for your chatbot
 
-Avaiable on GitHub https://perosa.github.io/avatarBot.html 
+Try me https://perosa.github.io/avatarBot.html 
 
 ### Tech Specs
 
-Built on Rasa 
+Built on Rasa and Rasa WebChat
 
 Deployed on Docker @ Heroku
 
