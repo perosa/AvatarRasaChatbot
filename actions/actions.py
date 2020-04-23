@@ -3,6 +3,9 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
+import string
+import random
+
 import os
 import logging
 
@@ -41,7 +44,7 @@ class ActionFindAvatar(Action):
 
         dispatcher.utter_message(template="utter_avatar_found")
 
-        url = get_avatar_svc() + 'get/' + style + '/' + gender
+        url = get_avatar_svc() + 'get/' + style + '/' + gender + '/' + id_generator()
 
         logging.info(f"image {url}")
 
@@ -76,3 +79,7 @@ def get_avatar_svc():
     :return:
     """
     return str(os.environ.get("AVATAR_SVC", 'http://localhost:5000/'))
+
+
+def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
+        return ''.join(random.choice(chars) for _ in range(size))

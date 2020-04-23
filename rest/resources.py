@@ -21,12 +21,13 @@ def ping():
     return "ping Ok"
 
 
-@app.route('/get/<style>/<gender>')
-def get_image(style, gender):
+@app.route('/get/<style>/<gender>/<ts>')
+def get_image(style, gender, ts):
     """
     Returns the given image
     :param gender:
     :param style:
+    :param ts:
     :return:
     """
 
