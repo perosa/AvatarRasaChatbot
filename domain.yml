@@ -51,7 +51,7 @@ responses:
         - title: "Male"
           payload: '/choose_gender{"gender": "male"}'
         - title: "Surprise Me"
-          payload: '/choose_gender{"gender": "surprise me"}'
+          payload: '/choose_gender{"gender": "others"}'
 
   utter_avatar_found:
     - text: "Here it is!"
