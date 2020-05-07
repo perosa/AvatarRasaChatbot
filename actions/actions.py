@@ -47,6 +47,7 @@ class ActionFindAvatar(Action):
         url = get_avatar_svc() + 'get/' + style + '/' + gender + '/' + id_generator()
 
         logging.info(f"image {url}")
+        logging.info(f"sender_id {tracker.sender_id}")
 
         dispatcher.utter_message(image=url)
 
